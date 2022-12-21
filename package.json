@@ -1,0 +1,32 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi Demo application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.5.4",
+    "@strapi/plugin-users-permissions": "4.5.4",
+    "@strapi/plugin-i18n": "4.5.4",
+    "better-sqlite3": "7.4.6"
+  },
+  "author": {
+    "name": "Artur Bartosik",
+    "url": "https://abartosik.dev",
+    "email": "hi@abartosik.dev"
+  },
+  "strapi": {
+    "uuid": "2a50410b-f385-4925-8507-4ed4678b7dbb"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
