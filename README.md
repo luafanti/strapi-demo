@@ -1,57 +1,52 @@
-# 🚀 Getting started with Strapi
+#  Strapi demo starter 🚀
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+Demo [Strapi](https://github.com/strapi/strapi) starter with PostgreSQL as database and AWS S3 as upload provider. Starter is dockerized and has Helm Chart definition ready for Kubernetes deployment.  
 
-### `develop`
+### Local development
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+##### Requirements
+
+- NPM >= >=6.0.0
+- NodeJS >=14.19.1 <=18.x.x
+- PostgreSQL >= 10
+
+##### Installation
 
 ```
-npm run develop
-# or
+yarn install
+```
+
+Start Strapi application with autoReload
+```
+mv .env.example .env
 yarn develop
 ```
 
-### `start`
+### Docker image
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
-
+You can use Docker image from one of my registries:
 ```
-npm run start
-# or
-yarn start
+docker pull ghcr.io/luafanti/strapi-demo:main
+docker pull luafanti/strapi-demo:main
 ```
 
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
-
+Run image
 ```
-npm run build
-# or
-yarn build
+docker run -it -p 1337:1337 \
+-e APP_KEYS=q/MetH5eiAHEfrGR4/mFjg==,RFZIGjS9YH9uWuoy0QlhdQ==,aBnBcKfZsC1TqyvPfZJ7Rg==,isuxG5awQwJwxyQARiUIxw== \
+-e API_TOKEN_SALT=daVkBD8iqnIme7RqJT5OhA== \
+-e ADMIN_JWT_SECRET=GVuxLZot1UPlrxng2hyTJw== \
+-e JWT_SECRET=x3JFhbjaJzO6wDBxhGK7Pw== \
+-e DATABASE_HOST=host.docker.internal \
+-e DATABASE_NAME=strapi \
+-e DATABASE_USERNAME=strapi \
+-e DATABASE_PASSWORD=strapi \
+-e DATABASE_SSL=false \
+luafanti/strapi-demo::main
 ```
 
-## ⚙️ Deployment
+or using `docker-compose`
+```
+docker-compose -f infra/docker/docker-compose.yaml up
+```
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
