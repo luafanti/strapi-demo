@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-bullseye
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-db:/data/postgres
+    expose:
+      - 5432
+
+  strapi:
+    image: ghcr.io/luafanti/strapi-demo:main
+    ports:
+      - 1337:1337
+    depends_on:
+      - postgres
+    restart: always
+    environment:
+      - APP_KEYS=q/MetH5eiAHEfrGR4/mFjg==,RFZIGjS9YH9uWuoy0QlhdQ==,aBnBcKfZsC1TqyvPfZJ7Rg==,isuxG5awQwJwxyQARiUIxw==
+      - API_TOKEN_SALT=daVkBD8iqnIme7RqJT5OhA==
+      - ADMIN_JWT_SECRET=GVuxLZot1UPlrxng2hyTJw==
+      - JWT_SECRET=x3JFhbjaJzO6wDBxhGK7Pw==
+      - DATABASE_HOST=postgres
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=strapi
+      - DATABASE_PASSWORD=strapi
+      - DATABASE_SSL=false
+
+volumes:
+  postgres-db:
+    driver: local
