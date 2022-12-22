@@ -1,4 +1,4 @@
-ARG NODE_BUILD_IMAGE=node:18.12.1-bullseye
+ARG NODE_BUILD_IMAGE=node:18.12.1-bullseye-slim
 ARG NODE_RUN_IMAGE=node:18.12.1-bullseye
 
 ### BUILD
