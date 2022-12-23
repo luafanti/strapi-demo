@@ -114,3 +114,9 @@ exports
 dist
 build
 .strapi-updater.json
+
+############################
+# Helm
+############################
+
+infra/helm/strapi/charts/*

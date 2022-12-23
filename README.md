@@ -50,3 +50,13 @@ or using `docker-compose`
 docker-compose -f infra/docker/docker-compose.yaml up
 ```
 
+### Helm chart
+
+Install Helm Chart 
+```
+# using external PostgreSQL instance
+helm install starter infra/helm/strapi -f infra/helm/strapi/internal-db-sample-values.yaml
+
+# creating interal PostgreSQL instance
+helm install starter infra/helm/strapi -f infra/helm/strapi/external-db-sample-values.yaml
+```

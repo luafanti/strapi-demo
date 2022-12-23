@@ -1,0 +1,27 @@
+image:
+  registry: ghcr.io
+  repository: luafanti/strapi-demo
+  tag: main
+  pullPolicy: IfNotPresent
+  debug: false
+
+externalDatabase:
+  host: ""
+  port: 5432
+  user: ""
+  password: ""
+  database: strapi
+
+keys:
+  apiKeys: q/MetH5eiAHEfrGR4/mFjg==,RFZIGjS9YH9uWuoy0QlhdQ==,aBnBcKfZsC1TqyvPfZJ7Rg==,isuxG5awQwJwxyQARiUIxw==
+  apiTokenSalt: daVkBD8iqnIme7RqJT5OhA==
+  adminJwtSecret: GVuxLZot1UPlrxng2hyTJw==
+  jwtSecret: x3JFhbjaJzO6wDBxhGK7Pw==
+
+#storage:
+#  provider: aws-s3
+#  aws:
+#    bucket:
+#    accessKey:
+#    secretKey:
+#    region:
